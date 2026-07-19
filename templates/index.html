@@ -1,45 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Momentum | Track Your Learning Journey</title>
+
+    <title>LearnTrack | Track Your Learning Journey</title>
+
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
 </head>
+
 
 <body>
 
-    <nav>
-        <div class="logo">Momentum</div>
 
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/entries">Journal</a></li>
-            <li><a href="/add">New Entry</a></li>
-            <li><a href="/about">About</a></li>
-        </ul>
-    </nav>
+<!-- ===================== NAVIGATION ===================== -->
 
-    <section class="hero">
+<nav>
 
-        <div class="hero-content">
+    <div class="logo">
+        LearnTrack
+    </div>
 
-            <h1>Build your future,<br>one learning session at a time.</h1>
 
-            <p>
-                Momentum helps you record what you learn,
-                reflect on your progress, and stay consistent
-                throughout your programming journey.
-            </p>
+    <ul>
 
-            <a href="/add" class="btn">
-                Start Today's Entry
+        <li>
+            <a href="/">Home</a>
+        </li>
+
+
+        <li>
+            <a href="/entries">Journal</a>
+        </li>
+
+
+        <li>
+            <a href="/about">About</a>
+        </li>
+
+
+        <li>
+            <a href="/add" class="nav-btn">
+                + New Entry
             </a>
+        </li>
 
-        </div>
 
-    </section>
+    </ul>
+
+
+</nav>
+
+
+
+<!-- ===================== HERO SECTION ===================== -->
+
+
+<section class="hero">
+
+
+    <div class="hero-content">
+
+
+        <h1>
+
+            Learn today.<br>
+            Remember tomorrow.
+
+        </h1>
+
+
+
+        <p>
+
+            LearnTrack helps you record every learning session,
+            reflect on your progress, and build consistency
+            throughout your programming journey.
+
+        </p>
+
+
+
+        <a href="/add" class="btn">
+
+            Start Today's Entry
+
+        </a>
+
+
+    </div>
+
+
+</section>
+
+
+
+
+
+<!-- ===================== FEATURES ===================== -->
+
+
+<section class="features">
+
+
+    <div class="feature-card">
+
+
+        <h2>📖</h2>
+
+
+        <h3>
+            Learning Journal
+        </h3>
+
+
+        <p>
+
+            Record what you studied after every learning session
+            and build your personal knowledge archive.
+
+        </p>
+
+
+    </div>
+
+
+
+
+
+    <div class="feature-card">
+
+
+        <h2>🧠</h2>
+
+
+        <h3>
+            Reflection
+        </h3>
+
+
+        <p>
+
+            Note down difficult concepts and revisit them
+            whenever you need improvement.
+
+        </p>
+
+
+    </div>
+
+
+
+
+
+    <div class="feature-card">
+
+
+        <h2>📈</h2>
+
+
+        <h3>
+            Progress Tracking
+        </h3>
+
+
+        <p>
+
+            Understand your learning habits and stay
+            consistent with your goals.
+
+        </p>
+
+
+    </div>
+
+
+
+</section>
+
+
+
+
+
+<!-- ===================== QUOTE ===================== -->
+
+
+<section class="quote">
+
+
+    <h2>
+
+        "Small progress each day leads to remarkable results."
+
+    </h2>
+
+
+</section>
+
+
+
+
+
+<!-- ===================== FOOTER ===================== -->
+
+
+<footer>
+
+
+    <p>
+
+        © 2026 LearnTrack | Built with Flask
+
+    </p>
+
+
+</footer>
+
+
 
 </body>
+
 </html>

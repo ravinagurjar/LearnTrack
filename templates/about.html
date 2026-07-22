@@ -1,186 +1,127 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
+{% block title %}
+About | LearnTrack
+{% endblock %}
 
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>About | LearnTrack</title>
-
-
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-
-</head>
-
-
-<body>
-
-
-<!-- ===================== NAVIGATION ===================== -->
-
-
-<nav>
-
-
-    <div class="logo">
-        LearnTrack
-    </div>
-
-
-    <ul>
-
-        <li>
-            <a href="/">
-                Home
-            </a>
-        </li>
-
-
-        <li>
-            <a href="/entries">
-                Journal
-            </a>
-        </li>
-
-
-        <li>
-            <a href="/about">
-                About
-            </a>
-        </li>
-
-
-        <li>
-            <a href="/add" class="nav-btn">
-                + New Entry
-            </a>
-        </li>
-
-
-    </ul>
-
-
-</nav>
-
-
-
-
-
-<!-- ===================== ABOUT CONTENT ===================== -->
-
+{% block content %}
 
 <div class="container">
 
-
-    <h1>
-        About LearnTrack
-    </h1>
-
-
+    <h1>About LearnTrack</h1>
 
     <p>
-
-        LearnTrack is a personal learning journal designed to help
-        students record their daily progress, reflect on concepts,
-        and build consistent learning habits.
-
+        LearnTrack is a web-based learning tracker developed using
+        Python Flask, SQLite, HTML and CSS.
+        It helps students record their learning activities,
+        monitor their progress and maintain consistency in their studies.
     </p>
-
 
     <br>
 
-
-
-    <h2>
-        Why LearnTrack?
-    </h2>
-
-
-    <p>
-
-        While learning programming and technical skills, it is easy
-        to forget what we studied or lose track of improvement.
-        LearnTrack provides a simple way to maintain a record of
-        learning sessions and revisit previous knowledge.
-
-    </p>
-
-
-
-    <br>
-
-
-
-    <h2>
-        Features
-    </h2>
-
+    <h2>Project Objectives</h2>
 
     <ul>
 
-        <li>
-            Record daily learning sessions
-        </li>
+        <li>Record daily learning activities.</li>
 
+        <li>Track learning progress.</li>
 
-        <li>
-            Track study time and confidence level
-        </li>
+        <li>Maintain a personal learning journal.</li>
 
+        <li>Search and manage learning entries.</li>
 
-        <li>
-            Maintain a personal learning journal
-        </li>
-
-
-        <li>
-            Reflect on doubts and improvements
-        </li>
-
+        <li>Improve consistency through self-reflection.</li>
 
     </ul>
 
+    <br>
 
+    <h2>Key Features</h2>
+
+    <ul>
+
+        <li>Add new learning entries.</li>
+
+        <li>Edit existing entries.</li>
+
+        <li>Delete learning entries.</li>
+
+        <li>Search entries by skill or category.</li>
+
+        <li>View learning progress.</li>
+
+        <li>Simple and responsive user interface.</li>
+
+    </ul>
 
     <br>
 
+    <h2>Technology Stack</h2>
 
+    <table>
 
-    <h2>
-        Technologies Used
-    </h2>
+        <tr>
 
+            <th>Technology</th>
+
+            <th>Purpose</th>
+
+        </tr>
+
+        <tr>
+
+            <td>Python</td>
+
+            <td>Backend Programming</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Flask</td>
+
+            <td>Web Framework</td>
+
+        </tr>
+
+        <tr>
+
+            <td>SQLite</td>
+
+            <td>Database</td>
+
+        </tr>
+
+        <tr>
+
+            <td>HTML</td>
+
+            <td>Web Page Structure</td>
+
+        </tr>
+
+        <tr>
+
+            <td>CSS</td>
+
+            <td>User Interface Design</td>
+
+        </tr>
+
+    </table>
+
+    <br>
+
+    <h2>Developed By</h2>
 
     <p>
 
-        HTML5 • CSS3 • Flask • Python • SQLite
+        This project has been developed as a second-year B.Tech Computer Science
+        mini project to demonstrate CRUD operations using Flask with SQLite.
 
     </p>
-
-
 
 </div>
 
-
-
-
-
-<footer>
-
-
-    <p>
-
-        © 2026 LearnTrack | Built with Flask
-
-    </p>
-
-
-</footer>
-
-
-
-</body>
-
-</html>
+{% endblock %}

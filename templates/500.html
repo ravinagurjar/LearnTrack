@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}
+500 - Server Error | LearnTrack
+{% endblock %}
+
+{% block content %}
+
+<div class="container text-center">
+
+    <h1>500</h1>
+
+    <h2>Internal Server Error</h2>
+
+    <p>
+
+        Something went wrong on the server.
+
+        Please try again later.
+
+    </p>
+
+    <br>
+
+    <a href="{{ url_for('home') }}" class="btn">
+
+        Back to Home
+
+    </a>
+
+</div>
+
+{% endblock %}

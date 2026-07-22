@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}
+Login | LearnTrack
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+    <h1>Login</h1>
+
+    <p>
+        Welcome to LearnTrack. Please login to continue.
+    </p>
+
+    <form action="{{ url_for('login') }}" method="POST">
+
+        <label for="username">
+            Username
+        </label>
+
+        <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Enter your username"
+            required
+        >
+
+        <label for="password">
+            Password
+        </label>
+
+        <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            required
+        >
+
+        <div class="form-buttons">
+
+            <button type="submit">
+
+                Login
+
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}

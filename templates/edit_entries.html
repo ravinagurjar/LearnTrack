@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+
+{% block title %}
+Edit Learning Entry | LearnTrack
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+    <h1>Edit Learning Entry</h1>
+
+    <p>
+        Update your learning details and keep your progress up to date.
+    </p>
+
+    <form action="{{ url_for('edit_entry', id=entry.id) }}" method="POST">
+
+        <!-- Skill Name -->
+
+        <label for="skill">Skill Name</label>
+
+        <input
+            type="text"
+            id="skill"
+            name="skill"
+            value="{{ entry.skill }}"
+            required
+        >
+
+        <!-- Category -->
+
+        <label for="category">Category</label>
+
+        <select id="category" name="category" required>
+
+            <option value="Programming" {% if entry.category == "Programming" %}selected{% endif %}>Programming</option>
+
+            <option value="Web Development" {% if entry.category == "Web Development" %}selected{% endif %}>Web Development</option>
+
+            <option value="Database" {% if entry.category == "Database" %}selected{% endif %}>Database</option>
+
+            <option value="Data Structures" {% if entry.category == "Data Structures" %}selected{% endif %}>Data Structures</option>
+
+            <option value="Operating System" {% if entry.category == "Operating System" %}selected{% endif %}>Operating System</option>
+
+            <option value="Computer Networks" {% if entry.category == "Computer Networks" %}selected{% endif %}>Computer Networks</option>
+
+            <option value="Artificial Intelligence" {% if entry.category == "Artificial Intelligence" %}selected{% endif %}>Artificial Intelligence</option>
+
+            <option value="Tools" {% if entry.category == "Tools" %}selected{% endif %}>Tools</option>
+
+            <option value="Others" {% if entry.category == "Others" %}selected{% endif %}>Others</option>
+
+        </select>
+
+        <!-- Learning Level -->
+
+        <label for="level">Learning Level</label>
+
+        <select id="level" name="level" required>
+
+            <option value="Beginner" {% if entry.level == "Beginner" %}selected{% endif %}>Beginner</option>
+
+            <option value="Intermediate" {% if entry.level == "Intermediate" %}selected{% endif %}>Intermediate</option>
+
+            <option value="Advanced" {% if entry.level == "Advanced" %}selected{% endif %}>Advanced</option>
+
+        </select>
+
+        <!-- Progress -->
+
+        <label for="progress">Progress (%)</label>
+
+        <input
+            type="number"
+            id="progress"
+            name="progress"
+            min="0"
+            max="100"
+            value="{{ entry.progress }}"
+            required
+        >
+
+        <!-- Study Time -->
+
+        <label for="study_time">Study Time (Hours)</label>
+
+        <input
+            type="number"
+            id="study_time"
+            name="study_time"
+            min="1"
+            value="{{ entry.study_time }}"
+            required
+        >
+
+        <!-- Learning Notes -->
+
+        <label for="learning">Learning Notes</label>
+
+        <textarea
+            id="learning"
+            name="learning"
+            rows="5"
+            required
+        >{{ entry.learning }}</textarea>
+
+        <!-- Confusion Notes -->
+
+        <label for="confusion">Confusion / Challenges</label>
+
+        <textarea
+            id="confusion"
+            name="confusion"
+            rows="4"
+        >{{ entry.confusion }}</textarea>
+
+        <div class="form-buttons">
+
+            <button type="submit">
+                Update Entry
+            </button>
+
+            <a href="{{ url_for('view_entries') }}" class="btn secondary-btn">
+                Cancel
+            </a>
+
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}

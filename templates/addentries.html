@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+
+{% block title %}
+Add Learning Entry | LearnTrack
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+    <h1>Add New Learning Entry</h1>
+
+    <p>
+        Record today's learning progress and keep track of your improvement.
+    </p>
+
+    <form action="{{ url_for('add_entry') }}" method="POST">
+
+        <!-- Skill Name -->
+
+        <label for="skill">Skill Name</label>
+
+        <input
+            type="text"
+            id="skill"
+            name="skill"
+            placeholder="e.g. Python, Flask, SQL"
+            required
+        >
+
+        <!-- Category -->
+
+        <label for="category">Category</label>
+
+        <select id="category" name="category" required>
+
+            <option value="" selected disabled>Select Category</option>
+
+            <option value="Programming">Programming</option>
+
+            <option value="Web Development">Web Development</option>
+
+            <option value="Database">Database</option>
+
+            <option value="Data Structures">Data Structures</option>
+
+            <option value="Operating System">Operating System</option>
+
+            <option value="Computer Networks">Computer Networks</option>
+
+            <option value="Artificial Intelligence">Artificial Intelligence</option>
+
+            <option value="Tools">Tools</option>
+
+            <option value="Others">Others</option>
+
+        </select>
+
+        <!-- Learning Level -->
+
+        <label for="level">Learning Level</label>
+
+        <select id="level" name="level" required>
+
+            <option value="" selected disabled>Select Level</option>
+
+            <option value="Beginner">Beginner</option>
+
+            <option value="Intermediate">Intermediate</option>
+
+            <option value="Advanced">Advanced</option>
+
+        </select>
+
+        <!-- Progress -->
+
+        <label for="progress">Progress (%)</label>
+
+        <input
+            type="number"
+            id="progress"
+            name="progress"
+            min="0"
+            max="100"
+            placeholder="0 - 100"
+            required
+        >
+
+        <!-- Study Time -->
+
+        <label for="study_time">Study Time (Hours)</label>
+
+        <input
+            type="number"
+            id="study_time"
+            name="study_time"
+            min="1"
+            placeholder="Example: 2"
+            required
+        >
+
+        <!-- Learning Notes -->
+
+        <label for="learning">Learning Notes</label>
+
+        <textarea
+            id="learning"
+            name="learning"
+            rows="5"
+            placeholder="Describe what you learned today..."
+            required
+        ></textarea>
+
+        <!-- Confusion Notes -->
+
+        <label for="confusion">Confusion / Challenges</label>
+
+        <textarea
+            id="confusion"
+            name="confusion"
+            rows="4"
+            placeholder="Mention concepts you need to revise..."
+        ></textarea>
+
+        <div class="form-buttons">
+
+            <button type="submit">
+                Save Entry
+            </button>
+
+            <a href="/view-entries" class="btn secondary-btn">
+    Cancel
+</a>
+            </a>
+
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}

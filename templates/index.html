@@ -1,228 +1,215 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
+{% block title %}
+LearnTrack | Home
+{% endblock %}
 
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>LearnTrack | Track Your Learning Journey</title>
-
-
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-
-</head>
-
-
-<body>
-
-
-<!-- ===================== NAVIGATION ===================== -->
-
-<nav>
-
-    <div class="logo">
-        LearnTrack
-    </div>
-
-
-    <ul>
-
-        <li>
-            <a href="/">Home</a>
-        </li>
-
-
-        <li>
-            <a href="/entries">Journal</a>
-        </li>
-
-
-        <li>
-            <a href="/about">About</a>
-        </li>
-
-
-        <li>
-            <a href="/add" class="nav-btn">
-                + New Entry
-            </a>
-        </li>
-
-
-    </ul>
-
-
-</nav>
-
-
+{% block content %}
 
 <!-- ===================== HERO SECTION ===================== -->
 
-
 <section class="hero">
-
 
     <div class="hero-content">
 
-
         <h1>
-
-            Learn today.<br>
-            Remember tomorrow.
-
+            Learn Today.<br>
+            Grow Every Day.
         </h1>
 
-
-
         <p>
-
-            LearnTrack helps you record every learning session,
-            reflect on your progress, and build consistency
-            throughout your programming journey.
-
+            LearnTrack helps you organize your learning journey by recording
+            your study sessions, tracking progress, and reviewing your learning
+            notes—all in one place.
         </p>
 
+        <div class="hero-buttons">
 
+            <a href="{{ url_for('add_entry') }}" class="btn">
+                + Add New Entry
+            </a>
 
-        <a href="/add" class="btn">
+            <a href="{{ url_for('view_entries') }}" class="btn secondary-btn">
+                View Entries
+            </a>
 
-            Start Today's Entry
-
-        </a>
-
+        </div>
 
     </div>
-
 
 </section>
 
 
+
+<!-- ===================== DASHBOARD ===================== -->
+
+<section class="features">
+
+    <div class="feature-card">
+
+        <h2>📚</h2>
+
+        <h3>Total Entries</h3>
+
+        <p>{{ total_entries }}</p>
+
+    </div>
+
+
+
+    <div class="feature-card">
+
+        <h2>📈</h2>
+
+        <h3>Average Progress</h3>
+
+        <p>{{ average_progress }}%</p>
+
+    </div>
+
+
+
+    <div class="feature-card">
+
+        <h2>⏳</h2>
+
+        <h3>Total Study Hours</h3>
+
+        <p>{{ total_study_time }} Hours</p>
+
+    </div>
+
+</section>
 
 
 
 <!-- ===================== FEATURES ===================== -->
 
-
 <section class="features">
 
-
     <div class="feature-card">
-
 
         <h2>📖</h2>
 
-
-        <h3>
-            Learning Journal
-        </h3>
-
+        <h3>Learning Journal</h3>
 
         <p>
-
-            Record what you studied after every learning session
-            and build your personal knowledge archive.
-
+            Record every study session and build your own personal learning
+            journal for future revision.
         </p>
-
 
     </div>
 
 
 
-
-
     <div class="feature-card">
-
 
         <h2>🧠</h2>
 
-
-        <h3>
-            Reflection
-        </h3>
-
+        <h3>Reflection Notes</h3>
 
         <p>
-
-            Note down difficult concepts and revisit them
-            whenever you need improvement.
-
+            Save important concepts, doubts, and key takeaways after each
+            learning session.
         </p>
 
-
     </div>
-
-
 
 
 
     <div class="feature-card">
 
+        <h2>🎯</h2>
 
-        <h2>📈</h2>
-
-
-        <h3>
-            Progress Tracking
-        </h3>
-
+        <h3>Progress Tracking</h3>
 
         <p>
-
-            Understand your learning habits and stay
-            consistent with your goals.
-
+            Monitor your progress regularly and stay consistent with your
+            learning goals.
         </p>
-
 
     </div>
 
-
-
 </section>
 
 
 
+<!-- ===================== RECENT ENTRIES ===================== -->
+
+<div class="container">
+
+    <h2>Recent Learning Entries</h2>
+
+    <br>
+
+    {% if recent_entries %}
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>Skill</th>
+                <th>Category</th>
+                <th>Level</th>
+                <th>Progress</th>
+                <th>Study Hours</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            {% for entry in recent_entries %}
+
+            <tr>
+
+                <td>{{ entry.skill }}</td>
+                <td>{{ entry.category }}</td>
+                <td>{{ entry.level }}</td>
+                <td>{{ entry.progress }}%</td>
+                <td>{{ entry.study_time }}</td>
+
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+    <br>
+
+    <a href="{{ url_for('view_entries') }}" class="btn">
+        View All Entries
+    </a>
+
+    {% else %}
+
+    <p>No learning entries found.</p>
+
+    <br>
+
+    <a href="{{ url_for('add_entry') }}" class="btn">
+        Create Your First Entry
+    </a>
+
+    {% endif %}
+
+</div>
 
 
-<!-- ===================== QUOTE ===================== -->
 
+<!-- ===================== MOTIVATIONAL QUOTE ===================== -->
 
 <section class="quote">
 
-
     <h2>
-
-        "Small progress each day leads to remarkable results."
-
+        "Small progress every day leads to remarkable results."
     </h2>
-
 
 </section>
 
-
-
-
-
-<!-- ===================== FOOTER ===================== -->
-
-
-<footer>
-
-
-    <p>
-
-        © 2026 LearnTrack | Built with Flask
-
-    </p>
-
-
-</footer>
-
-
-
-</body>
-
-</html>
+{% endblock %}

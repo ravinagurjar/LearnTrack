@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block title %}
+Learning Entries | LearnTrack
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+    <h1>Learning Entries</h1>
+
+    <p>
+        View, edit and manage all your learning records.
+    </p>
+
+    {% if entries %}
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>Skill</th>
+                <th>Category</th>
+                <th>Level</th>
+                <th>Progress</th>
+                <th>Study Hours</th>
+                <th>Actions</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            {% for entry in entries %}
+
+            <tr>
+
+                <td>{{ entry.skill }}</td>
+
+                <td>{{ entry.category }}</td>
+
+                <td>{{ entry.level }}</td>
+
+                <td>
+
+                    <div class="progress-bar">
+
+                        <div class="progress-fill"
+                             style="width: {{ entry.progress }}%;">
+
+                        </div>
+
+                    </div>
+
+                    {{ entry.progress }}%
+
+                </td>
+
+                <td>{{ entry.study_time }}</td>
+
+                <td>
+
+                    <a href="/edit/{{ entry.id }}" class="btn">
+                        Edit
+                    </a>
+
+                    <a href="/delete/{{ entry.id }}"
+                       class="btn danger-btn"
+                       onclick="return confirm('Are you sure you want to delete this entry?');">
+
+                        Delete
+
+                    </a>
+
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+    {% else %}
+
+    <div class="empty-state">
+
+        <h2>No Learning Entries Found</h2>
+
+        <p>
+
+            Start tracking your learning journey by creating your first entry.
+
+        </p>
+
+        <br>
+
+        <a href="/add" class="btn">
+
+            + Add Learning Entry
+
+        </a>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

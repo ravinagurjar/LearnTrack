@@ -1,31 +1,31 @@
 # LearnTrack
 
-LearnTrack is a web-based learning tracker developed using **Python Flask**, **SQLite**, **HTML**, and **CSS**. The project allows users to record their daily learning activities, monitor progress, and maintain personal learning notes in one place.
+LearnTrack is a web-based learning tracker developed using **Python**, **Flask**, **SQLite**, **HTML**, and **CSS**. It helps users organize their learning journey by recording skills, tracking progress, managing study time, and maintaining personal learning notes in one place.
 
-This project was developed as a second-year B.Tech (Computer Science Engineering) project to understand the fundamentals of Flask web development, SQLAlchemy, template rendering, and CRUD operations.
+This project was developed as part of a **Second-Year B.Tech (Computer Science Engineering)** curriculum to gain practical experience with Flask web development, SQLAlchemy, template rendering, session management, and CRUD operations.
 
 ---
 
 ## Project Overview
 
-While learning different technologies, it becomes difficult to remember what has been studied, how much progress has been made, and which topics still need revision. LearnTrack solves this problem by providing a simple platform where learning entries can be added, updated, searched, and managed efficiently.
+Learning multiple technologies often makes it difficult to remember completed topics, monitor progress, and identify concepts that need revision. LearnTrack solves this problem by providing a simple and organized platform where users can add, update, search, and manage their learning records efficiently.
 
-The project focuses on clean code, beginner-friendly implementation, and practical usage of Flask with a relational database.
+The project focuses on clean code, beginner-friendly implementation, and practical use of Flask with a relational database.
 
 ---
 
 ## Features
 
-- User login using session-based authentication
-- Dashboard showing learning statistics
+- Secure session-based login
+- Dashboard with learning statistics
 - Add new learning entries
 - View all saved entries
 - Edit existing entries
-- Delete entries
+- Delete learning entries
 - Search entries by keyword and category
 - Flash messages for user feedback
 - Custom 404 and 500 error pages
-- Responsive interface for different screen sizes
+- Responsive user interface
 
 ---
 
@@ -48,7 +48,7 @@ The project focuses on clean code, beginner-friendly implementation, and practic
 
 ## Project Structure
 
-```
+```text
 LearnTrack/
 │
 ├── app.py
@@ -83,10 +83,10 @@ LearnTrack/
 
 The project uses **SQLite** with **Flask-SQLAlchemy**.
 
-Current model:
+### Skill Model
 
 | Field | Type |
-|-------|------|
+|--------|------|
 | id | Integer |
 | skill | String |
 | category | String |
@@ -98,33 +98,33 @@ Current model:
 
 ---
 
-## How to Run the Project
+## Installation & Usage
 
 ### 1. Clone the repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/ravinagurjar/LearnTrack.git
 ```
 
-### 2. Open the project folder
+### 2. Navigate to the project directory
 
 ```bash
 cd LearnTrack
 ```
 
-### 3. Install the required packages
+### 3. Install the required dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Run the application
+### 4. Run the Flask application
 
 ```bash
 python app.py
 ```
 
-### 5. Open in browser
+### 5. Open your browser
 
 ```
 http://127.0.0.1:5000
@@ -132,58 +132,29 @@ http://127.0.0.1:5000
 
 ---
 
-## Login Credentials
+## Demo Login Credentials
 
-```
-Username : admin
-Password : admin123
-```
+Use the following default administrator account to explore the application.
 
----
+| Username | Password |
+|----------|----------|
+| `admin` | `admin123` |
 
-## Screenshots
-
-You can add screenshots here after uploading the project to GitHub.
-
-Suggested screenshots:
-
-- Login Page
-- Dashboard
-- Add Entry
-- View Entries
-- Search Page
-- About Page
-
----
-
-## What I Learned
-
-While building this project, I gained practical experience with:
-
-- Flask routing
-- Jinja template inheritance
-- Session management
-- SQLAlchemy ORM
-- SQLite database integration
-- CRUD operations
-- Form handling
-- Flash messages
-- Error handling
-- Responsive web design
+> **Note:** These credentials are provided only for demonstration purposes. In a production application, user authentication should use securely stored and hashed passwords.
 
 ---
 
 ## Future Improvements
 
-Some features that can be added in future versions are:
+Future enhancements may include:
 
 - User registration
 - Multiple user accounts
 - Password hashing
-- Charts and analytics
+- Charts and analytics dashboard
 - Export entries as PDF or Excel
 - File attachments
-- Dark/Light theme
+- Dark/Light mode
 - Email reminders
 - Learning streak tracking
 
@@ -197,6 +168,6 @@ Second Year B.Tech (Computer Science Engineering)
 
 ---
 
-## Note
+## License
 
-This project was created for learning purposes as part of a college web development project. The main objective was to understand Flask application development and database integration by building a complete CRUD-based web application.
+This project is intended for educational and learning purposes.
